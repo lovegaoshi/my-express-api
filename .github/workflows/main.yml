@@ -1,4 +1,4 @@
-name: APM iOS dev Build
+name: player update scraper
 on:
   schedule:
     - cron: '0 0 * * *'
@@ -12,3 +12,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ghactions
+      - name: Install dependencies
+        run: npm i; npm run dev
+      
+      - name: psuh
+        run: |
+          git config --global user.name 'Your Name'
+          git config --global user.email 'your-username@users.noreply.github.com'
+          git commit -am "daily update"
+          git push
