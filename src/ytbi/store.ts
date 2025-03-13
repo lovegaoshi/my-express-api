@@ -26,9 +26,9 @@ const fakeCache: ICache = {
   remove: async () => undefined,
 };
 
-const getPlayer = async (newPlayerURL: string) => {
+const getPlayer = async (newPlayerURL?: string) => {
   const { playerURL, cachedPlayer } = store.getState();
-  if (newPlayerURL === undefined || playerURL === newPlayerURL) {
+  if (newPlayerURL === "undefined" || playerURL === newPlayerURL) {
     return cachedPlayer;
   }
   const newPlayer = await Player.create(fakeCache);
