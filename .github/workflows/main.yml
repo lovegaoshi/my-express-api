@@ -16,7 +16,7 @@ jobs:
         with:
           ref: ghactions
       - name: Install dependencies
-        run: npm i; npm run dev
+        run: yarn install; yarn dev
       
       - name: psuh
         run: |
