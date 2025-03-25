@@ -1,24 +1,60 @@
 diff --git a/node_modules/youtubei.js/dist/src/core/Player.js b/node_modules/youtubei.js/dist/src/core/Player.js
-index 4dabe22..b252229 100644
+index 4dabe22..5551ea5 100644
 --- a/node_modules/youtubei.js/dist/src/core/Player.js
 +++ b/node_modules/youtubei.js/dist/src/core/Player.js
-@@ -12,13 +12,17 @@ export default class Player {
+@@ -12,6 +12,32 @@ export default class Player {
          this.nsig_sc = nsig_sc;
          this.sig_sc = sig_sc;
      }
--    static async create(cache, fetch = Platform.shim.fetch, po_token) {
 +
-+    static async create2(cache, playerID) {
-+        return this.create(cache, Platform.shim.fetch, undefined, playerID);
++    static async create_from_id(cache, player_id) {
++        const fetch = Platform.shim.fetch;
++        const po_token = undefined;
++        const player_url = new URL(`/s/player/${player_id}/player_ias.vflset/en_US/base.js`, Constants.URLS.YT_BASE);
++        Log.info(TAG, `Could not find any cached player. Will download a new player from ${player_url}.`);
++        const player_res = await fetch(player_url, {
++            headers: {
++                'user-agent': getRandomUserAgent('desktop')
++            }
++        });
++        if (!player_res.ok) {
++            throw new PlayerError(`Failed to get player data: ${player_res.status}`);
++        }
++        const player_js = await player_res.text();
++        const ast = Jinter.parseScript(player_js, { ecmaVersion: 'latest', ranges: true });
++        const sig_timestamp = this.extractSigTimestamp(player_js);
++        const global_variable = this.extractGlobalVariable(player_js, ast);
++        const sig_sc = this.extractSigSourceCode(player_js, global_variable);
++        const nsig_sc = this.extractNSigSourceCode(player_js, ast, global_variable);
++        Log.info(TAG, `Got signature timestamp (${sig_timestamp}) and algorithms needed to decipher signatures.`);
++        const player = await Player.fromSource(player_id, sig_timestamp, cache, sig_sc, nsig_sc);
++        player.po_token = po_token;
++        return player;
++
 +    }
-+    static async create(cache, fetch = Platform.shim.fetch, po_token, playerID) {
+     static async create(cache, fetch = Platform.shim.fetch, po_token) {
          const url = new URL('/iframe_api', Constants.URLS.YT_BASE);
          const res = await fetch(url);
-         if (!res.ok)
+@@ -19,20 +45,11 @@ export default class Player {
              throw new PlayerError(`Failed to get player id: ${res.status} (${res.statusText})`);
          const js = await res.text();
--        const player_id = getStringBetweenStrings(js, 'player\\/', '\\/');
-+        const player_id = playerID ?? getStringBetweenStrings(js, 'player\\/', '\\/');
-         Log.info(TAG, `Got player id (${player_id}). Checking for cached players..`);
+         const player_id = getStringBetweenStrings(js, 'player\\/', '\\/');
+-        Log.info(TAG, `Got player id (${player_id}). Checking for cached players..`);
++        console.log(TAG, `Got player id (${player_id}). Checking for cached players..`);
          if (!player_id)
              throw new PlayerError('Failed to get player id');
+-        // We have the player id, now we can check if we have a cached player.
+-        if (cache) {
+-            const cached_player = await Player.fromCache(cache, player_id);
+-            if (cached_player) {
+-                Log.info(TAG, 'Found up-to-date player data in cache.');
+-                cached_player.po_token = po_token;
+-                return cached_player;
+-            }
+-        }
+         const player_url = new URL(`/s/player/${player_id}/player_ias.vflset/en_US/base.js`, Constants.URLS.YT_BASE);
+-        Log.info(TAG, `Could not find any cached player. Will download a new player from ${player_url}.`);
++        console.log(TAG, `Could not find any cached player. Will download a new player from ${player_url}.`);
+         const player_res = await fetch(player_url, {
+             headers: {
+                 'user-agent': getRandomUserAgent('desktop')

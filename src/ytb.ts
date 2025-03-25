@@ -13,9 +13,10 @@ const fakeCache: ICache = {
 };
 
 const getPlayer = async (newPlayerURL?: string) => {
-  const newPlayer = await Player.create2(fakeCache);
-  // @ts-expect-error
-  store.setState({ playerURL: newPlayer.player_id, cachedPlayer: cachedVal });
+  const newPlayer = newPlayerURL
+    ? Player.create_from_id(fakeCache, newPlayerURL)
+    : Player.create(fakeCache);
+  await newPlayer;
   console.log(`[getPlayer] Player created for ${newPlayer.player_id}`);
   return cachedVal;
 };

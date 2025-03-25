@@ -109,3 +109,5 @@ dist
 .vercel
 
 public
+# Local Netlify folder
+.netlify
