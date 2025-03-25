@@ -11,7 +11,10 @@ router.get("/", async (req: Request, res: Response) => {
   try {
     const playerURL = req.query ? String(req.query.playerURL) : undefined;
     console.log(`[findFunction] parsing ${playerURL}`);
-    res.set("Netlify-Vary", "query");
+    res.set({
+      "Netlify-Vary": "query",
+      "Really-Cool": "I know",
+    });
     return res.send(await getPlayer(playerURL));
   } catch {
     return res.status(500);
