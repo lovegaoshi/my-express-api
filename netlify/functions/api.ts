@@ -15,7 +15,7 @@ router.get("/", async (req: Request, res: Response) => {
       "Netlify-Vary": "query",
       "Really-Cool": "I know",
     });
-    return res.send(await getPlayer(playerURL));
+    return res.end(await getPlayer(playerURL));
   } catch {
     return res.status(500);
   }
