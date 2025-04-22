@@ -17,7 +17,11 @@ const getPlayer = async (newPlayerURL?: string) => {
     ? Player.create_from_id(fakeCache, newPlayerURL)
     : Player.create(fakeCache);
   await newPlayer;
-  console.log(`[getPlayer] Player created for ${newPlayer.player_id}`);
+  console.log(
+    `[getPlayer] Player created for ${newPlayer.player_id} with ${Object.keys(
+      newPlayer
+    )}`
+  );
   return cachedVal;
 };
 
