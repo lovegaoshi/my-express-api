@@ -13,15 +13,13 @@ const fakeCache: ICache = {
 };
 
 const getPlayer = async (newPlayerURL?: string) => {
-  const newPlayer = newPlayerURL
+  const newPlayer = await (newPlayerURL
     ? Player.create_from_id(fakeCache, newPlayerURL)
-    : Player.create(fakeCache);
-  await newPlayer;
-  console.log(
-    `[getPlayer] Player created for ${newPlayer.player_id} with ${Object.keys(
-      newPlayer
-    )}`
-  );
+    : Player.create(fakeCache));
+  console.log(`[getPlayer] Player created for ${newPlayer.player_id}`);
+  if (cachedVal === undefined) {
+    throw new Error("[getPlayer] player was not parsed in the end");
+  }
   return cachedVal;
 };
 
