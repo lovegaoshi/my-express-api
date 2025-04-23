@@ -110,9 +110,9 @@
     undici-types "~6.20.0"
 
 "@types/node@^18.15.3":
-  version "18.19.83"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.83.tgz#44d302cd09364640bdd45d001bc75e596f7da920"
-  integrity sha512-D69JeR5SfFS5H6FLbUaS0vE4r1dGhmMBbG4Ed6BNS4wkDK8GZjsdCShT5LCN59vOHEUHnFCY9J4aclXlIphMkA==
+  version "18.19.86"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.86.tgz#a7e1785289c343155578b9d84a0e3e924deb948b"
+  integrity sha512-fifKayi175wLyKyc5qUfyENhQ1dCNI1UNjp653d8kuYcPQN5JhX3dGuP/XmvPTg/xRBn1VTLpbmi+H/Mr7tLfQ==
   dependencies:
     undici-types "~5.26.4"
 
@@ -559,10 +559,10 @@ is-number@^7.0.0:
   resolved "https://registry.yarnpkg.com/is-number/-/is-number-7.0.0.tgz#7535345b896734d5f80c4d06c50955527a14f12b"
   integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
 
-jintr@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/jintr/-/jintr-3.3.0.tgz#74271197c260b9b2e435d961339263c515df603d"
-  integrity sha512-ZsaajJ4Hr5XR0tSPhOZOTjFhxA0qscKNSOs41NRjx7ZOGwpfdp8NKIBEUtvUPbA37JXyv1sJlgeOOZHjr3h76Q==
+jintr@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/jintr/-/jintr-3.3.1.tgz#b88355af0c66603130b12d54721b8ab1d3be0b98"
+  integrity sha512-nnOzyhf0SLpbWuZ270Omwbj5LcXUkTcZkVnK8/veJXtSZOiATM5gMZMdmzN75FmTyj+NVgrGaPdH12zIJ24oIA==
   dependencies:
     acorn "^8.8.0"
 
@@ -631,9 +631,9 @@ negotiator@0.6.3:
   integrity sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==
 
 nodemon@^3.0.2:
-  version "3.1.9"
-  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-3.1.9.tgz#df502cdc3b120e1c3c0c6e4152349019efa7387b"
-  integrity sha512-hdr1oIb2p6ZSxu3PB2JWWYS7ZQ0qvaZsc3hK8DR8f02kRzc8rjYmxAIvdz+aYC+8F2IjNaB7HMcSDg8nQpJxyg==
+  version "3.1.10"
+  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-3.1.10.tgz#5015c5eb4fffcb24d98cf9454df14f4fecec9bc1"
+  integrity sha512-WDjw3pJ0/0jMFmyNDp3gvY2YizjLmmOUQo6DEBY+JgdvW/yQ9mEeSw6H5ythl5Ny2ytb7f9C2nIbjSxMNzbJXw==
   dependencies:
     chokidar "^3.5.2"
     debug "^4"
@@ -878,9 +878,9 @@ type-is@~1.6.18:
     mime-types "~2.1.24"
 
 typescript@^5.8.2:
-  version "5.8.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.8.2.tgz#8170b3702f74b79db2e5a96207c15e65807999e4"
-  integrity sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==
+  version "5.8.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.8.3.tgz#92f8a3e5e3cf497356f4178c34cd65a7f5e8440e"
+  integrity sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==
 
 undefsafe@^2.0.5:
   version "2.0.5"
@@ -930,12 +930,12 @@ yn@3.1.1:
   integrity sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==
 
 youtubei.js@^13.1.0:
-  version "13.3.0"
-  resolved "https://registry.yarnpkg.com/youtubei.js/-/youtubei.js-13.3.0.tgz#31cca5fa295a146409b4858aca3283d8c8926c7a"
-  integrity sha512-tbl7rxltpgKoSsmfGUe9JqWUAzv6HFLqrOn0N85EbTn5DLt24EXrjClnXdxyr3PBARMJ3LC4vbll100a0ABsYw==
+  version "13.4.0"
+  resolved "https://registry.yarnpkg.com/youtubei.js/-/youtubei.js-13.4.0.tgz#1f52d7ed0ccabd5ba718eede84771aa32683d9e2"
+  integrity sha512-+fmIZU/dWAjsROONrASy1REwVpy6umAPVuoNLr/4iNmZXl84LyBef0n3hrd1Vn9035EuINToGyQcBmifwUEemA==
   dependencies:
     "@bufbuild/protobuf" "^2.0.0"
-    jintr "^3.3.0"
+    jintr "^3.3.1"
     tslib "^2.5.0"
     undici "^5.19.1"
 
