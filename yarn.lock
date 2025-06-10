@@ -929,10 +929,10 @@ yn@3.1.1:
   resolved "https://registry.yarnpkg.com/yn/-/yn-3.1.1.tgz#1e87401a09d767c1d5eab26a6e4c185182d2eb50"
   integrity sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==
 
-youtubei.js@^13.1.0:
-  version "13.4.0"
-  resolved "https://registry.yarnpkg.com/youtubei.js/-/youtubei.js-13.4.0.tgz#1f52d7ed0ccabd5ba718eede84771aa32683d9e2"
-  integrity sha512-+fmIZU/dWAjsROONrASy1REwVpy6umAPVuoNLr/4iNmZXl84LyBef0n3hrd1Vn9035EuINToGyQcBmifwUEemA==
+youtubei.js@^14.0.0:
+  version "14.0.0"
+  resolved "https://registry.yarnpkg.com/youtubei.js/-/youtubei.js-14.0.0.tgz#77af9b9773bd1d192848f1226e2097745b8b2ae5"
+  integrity sha512-KAFttOw+9fwwBUvBc1T7KzMNBLczDOuN/dfote8BA9CABxgx8MPgV+vZWlowdDB6DnHjSUYppv+xvJ4VNBLK9A==
   dependencies:
     "@bufbuild/protobuf" "^2.0.0"
     jintr "^3.3.1"
